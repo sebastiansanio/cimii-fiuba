@@ -22,8 +22,28 @@
 </div>
 </div>	
 </g:if>
-
 </g:each>
+
+<g:each in="${linea.estaciones.sort{it.ubicacion}}">
+<g:if test="${it.estado!='Correcto' }" >
+<div class="row">
+<div class="alert alert-error">
+<strong>Problema detectado!</strong>${" "+it.id+" : "+it.estado}
+</div>
+</div>	
+</g:if>
+</g:each>
+
+<g:each in="${linea.trayectos.sort{it.estacion1.ubicacion}}">
+<g:if test="${it.estado!='Correcto' }" >
+<div class="row">
+<div class="alert alert-error">
+<strong>Problema detectado!</strong>${" "+it.toString()+" : "+it.estado}
+</div>
+</div>	
+</g:if>
+</g:each>
+
 
 
 	
@@ -70,7 +90,7 @@
 	
 	<tr>
 	 <td>Nombre</td>
-	 <td>Ubicacion</td>
+	 <td>Distancia</td>
 	  <td>Estado</td>
 	</tr>
 	
