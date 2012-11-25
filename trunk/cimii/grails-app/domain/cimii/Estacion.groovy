@@ -29,7 +29,7 @@ class Estacion extends Lugar{
 	static constraints = {
 		nombre blank:false
 		ubicacion blank:false
-		estado blank:false,inList:["CORRECTO","OBSTACULO DETECTADO","FALTA DE CORRIENTE DETECTADA"]
+		estado blank:false,inList:["Correcto","Hay obstaculo","Falta corriente electrica"]
 	}
 	
 	public String toString(){
@@ -46,12 +46,16 @@ class Estacion extends Lugar{
 		}
 		for (int i =0;i<list.size;i++){
 			if (list[i].lugar.id == this.id)
-				hayTren = "TREN DETENIDO"
+				hayTren = "Hay tren detenido"
 		}
-		if(estado == "CORRECTO")
+		if(estado == "Correcto")
 			return hayTren
-		else
-			return estado + " + " + hayTren
+		else{
+			if(hayTren=="")
+				return estado
+			else
+				return estado + " + " + hayTren
+		}
 
 	}
 	

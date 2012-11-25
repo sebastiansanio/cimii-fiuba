@@ -21,10 +21,11 @@ class MonitoreoController {
 		String cantCorridasStr
 		
 		int cantCorridas=1	
-		if(params.id!=null)
+		if(params.id!=null){
 			cantCorridasStr=params.id
+			cantCorridas = Integer.parseInt(cantCorridasStr)
+		}
 		
-		cantCorridas = Integer.parseInt(cantCorridasStr)
 		for (int contador = 0;contador<cantCorridas;contador++){
 			resultado=simuladorService.simular(linea)
 		}

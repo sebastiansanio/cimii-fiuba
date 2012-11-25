@@ -47,11 +47,11 @@ class Linea {
 		
 		if(trayecto.verificarTrayectoDespejado()=="")
 			if(trayecto.estacion2.verificarEstacionDespejada()=="")
-				return "CORRECTO"
+				return "Correcto"
 			else
-				return "ESTACION SIGUIENTE -"+trayecto.estacion2.verificarEstacionDespejada()
+				return "En estacion siguiente: "+trayecto.estacion2.verificarEstacionDespejada()
 		else
-			return "TRAYECTO SIGUIENTE-"+trayecto.verificarTrayectoDespejado()
+			return "En trayecto siguiente: "+trayecto.verificarTrayectoDespejado()
 	}
 	
 	public float obtenerLongitud(){
