@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="layout" content="monitoreolay" />
 	<title><g:message value="Sistema de monitoreo de subterráneos"  /></title>
@@ -9,7 +10,7 @@
 
 <body>
 	
-	<h3>${linea.nombre }</h3>
+<h3>${linea.nombre }</h3>
 <h5>Avisos</h5>
 
 <g:each in="${linea.trenes.sort{it.ubicacionActual}}">
@@ -150,7 +151,17 @@
 	</div>
 
 </div>	
+<script>
+var timer = setTimeout('autoReload()',500);
+function autoReload(){
+	window.location.reload(true);
+}
+
+</script>
 
 </body>
+
+
+
 
 </html>
