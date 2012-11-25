@@ -24,7 +24,7 @@ class Tren {
 	int tiempoEntreIntentos
 	int tiempoEnEstacion = 0
 	float aceleracion = 0
-	String estado = "CORRECTO"
+	String estado = "Correcto"
 	float distanciaRestante
 	float distanciaTotal
 	boolean enEstacion
@@ -94,7 +94,7 @@ class Tren {
 						if(puertasCerradas==false){
 							tiempoEntreIntentos = 2
 							if(cantidadReintentosCierreDePuertas <= 0)
-								estado = "NO SE PUEDEN CERRAR LAS PUERTAS"
+								estado = "No se pueden cerrar las puertas"
 							
 						}
 					}else{
@@ -145,7 +145,7 @@ class Tren {
 		
 		if(verificarPuertasCerradas()==true){
 			estado = linea.verificarCaminoDespejado(lugar)
-			if(estado=="CORRECTO"){
+			if(estado=="Correcto"){
 				lugar = trayecto
 				enEstacion = false
 				distanciaRestante = trayecto.obtenerDistancia()

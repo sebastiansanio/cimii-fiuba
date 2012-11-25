@@ -21,7 +21,7 @@ class Trayecto extends Lugar{
     }
     
 	static constraints = {
-		estado blank:false, inList:["CORRECTO","OBSTACULO DETECTADO","FALTA DE CORRIENTE DETECTADA"]
+		estado blank:false, inList:["Correcto","Hay obstaculo","Falta corriente electrica"]
 		estacion1 blank:false,unique:true
 		estacion2 blank:false,unique:true
     }
@@ -37,12 +37,17 @@ class Trayecto extends Lugar{
 		}
 		for (int i =0;i<list.size;i++){
 			if (list[i].lugar.id == this.id)
-				hayTren = "TREN DETENIDO"
+				hayTren = "Tren detenido"
 		}
-		if(estado == "CORRECTO")
+		if(estado == "Correcto")
 			return hayTren
-		else
-			return estado + " + " + hayTren
+		else{
+			if(hayTren=="")
+				return estado
+			else
+				return estado + " + " + hayTren
+		}
+			
 	}
 	
 	public float obtenerDistancia(){
